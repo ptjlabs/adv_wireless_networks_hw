@@ -19,7 +19,7 @@ def norm_log_util_function(rate,rate_of_utilization):
 
     return container
 normalized = norm_log_util_function(set_rate,15)
-print(normalized)
+#print(normalized)
 
 import matplotlib.pyplot as plt
 plt.plot(set_rate,normalized)
