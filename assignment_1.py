@@ -9,7 +9,6 @@ import math
      and r-max = 50, and k = 0.1 and r-max = 50
 '''
 # Define Rate Set (50 being maximum required rate for the user to achieve 100%
-S_rate = [x for x in range(50)]
 set_rate = np.arange(0.,49.,0.1)
 
 # to represent delay-tolerant applications running on mobilestations, use the normalized logarithmic utility function
