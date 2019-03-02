@@ -16,8 +16,8 @@ def norm_log_util_function(rate,rate_of_utilization):
     container = []
     for ri in rate:
         container.append(math.log(1 + (rate_of_utilization * ri))/(math.log(1 + (rate_of_utilization * max(rate)))))
-
     return container
+
 normalized = norm_log_util_function(set_rate,15)
 #print(normalized)
 
