@@ -31,20 +31,19 @@ plt.plot(set_rate,delay_tolerant_user2,label='delayed-user2')
 
 '''
 
-# To represent real-time applications runningon mobile stations, use the normalized sigmoid utility function
-# def norm_sigmoid_util_function(rate,ai,bi):
-#     sig_container = []
-#     for ri in rate:
-#         # Ci = ((1 + math.exp(ai * bi))/math.exp(ai * bi))
-#         # di = (1/(1 + math.exp(ai * bi)))
-# 	    sig_container.append((((1 + math.exp(ai * bi))/math.exp(ai * bi)) * ((1/1 + math.exp(-ai(ri - bi)) - (1/(1 + math.exp(ai * bi)))))))
-#     return sig_container
+#To represent real-time applications runningon mobile stations, use the normalized sigmoid utility function
+def norm_sigmoid_util_function(rate,ai,bi):
+    sig_container = []
+    for ri in rate:
+	    sig_container.append( ((1 + math.exp(ai - bi)) / math.exp(ai * bi)) * ((1 / (1 + math.exp(-ai * (ri - bi))) - (1 / (1 + math.exp(ai * bi))))) )
+    return sig_container
 
-# realtime_user1 = norm_sigmoid_util_function(set_rate,5,10)
-# plt.plot(set_rate,realtime_user1,label='realtime-user1')
+realtime_user1 = norm_sigmoid_util_function(set_rate,5,10)
+# print(realtime_user1)
+plt.plot(set_rate,realtime_user1,label='realtime-user1')
 
-# realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
-# plt.plot(set_rate,realtime_user2,label='realtime-user2')
+realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
+plt.plot(set_rate,realtime_user2,label='realtime-user2')
 
 
 plt.xlabel('ri')
