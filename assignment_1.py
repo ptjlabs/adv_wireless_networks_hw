@@ -1,6 +1,6 @@
-# This file will serve as a place to test graphs
+#this file will serve as a place to test graphs
 
-
+import matplotlib.pyplot as plt
 import numpy as np
 import math
 
@@ -18,12 +18,15 @@ def norm_log_util_function(rate,rate_of_utilization):
         container.append(math.log(1 + (rate_of_utilization * ri))/(math.log(1 + (rate_of_utilization * max(rate)))))
     return container
 
-normalized = norm_log_util_function(set_rate,15)
-#print(normalized)
+user1 = norm_log_util_function(set_rate,15)
+plt.plot(set_rate,user1,label='user1')
 
-import matplotlib.pyplot as plt
-plt.plot(set_rate,normalized)
+user2 = norm_log_util_function(set_rate,0.1)
+plt.plot(set_rate,user2,label='user2')
+
 plt.xlabel('rate')
 plt.ylabel('utilization')
+plt.title('Part A')
+plt.legend()
 plt.show()
 
