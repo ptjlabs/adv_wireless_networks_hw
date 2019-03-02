@@ -19,10 +19,10 @@ def norm_log_util_function(rate,rate_of_utilization):
     return container
 
 delay_tolerant_user1 = norm_log_util_function(set_rate,15)
-plt.plot(set_rate,delay_tolerant_user1,label='user1')
+plt.plot(set_rate,delay_tolerant_user1,label='delayed-user1')
 
 delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
-plt.plot(set_rate,delay_tolerant_user2,label='user2')
+plt.plot(set_rate,delay_tolerant_user2,label='delayed-user2')
 
 
 '''
