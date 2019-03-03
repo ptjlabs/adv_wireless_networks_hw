@@ -60,3 +60,11 @@ plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
+'''
+  (c) use Levenberg-Marquardt algorithm for curve tting the two functions
+in (b) to the normalized logarithmic utility functions, nd the tting param-
+eters k and rmax. Plot the functions in (b) and new generated normalized
+logarithmic utility functions in the same gure.
+
+'''
+
