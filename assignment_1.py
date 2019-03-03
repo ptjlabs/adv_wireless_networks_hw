@@ -21,14 +21,15 @@ def norm_log_util_function(rate,rate_of_utilization):
 delay_tolerant_user1 = norm_log_util_function(set_rate,15)
 plt.plot(set_rate,delay_tolerant_user1,label='delayed-user1')
 
+
 delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
 plt.plot(set_rate,delay_tolerant_user2,label='delayed-user2')
 
-plt.xlabel('ri')
-plt.ylabel('Ui(ri)')
-plt.title('Assignment 1')
-plt.legend()
-plt.show()
+# plt.xlabel('ri')
+# plt.ylabel('Ui(ri)')
+# plt.title('Assignment 1')
+# plt.legend()
+# plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
@@ -42,16 +43,14 @@ plt.show()
 def norm_sigmoid_util_function(rate,ai,bi):
     sig_container = []
     for ri in rate:
-	    sig_container.append( ((1 + math.exp(ai - bi)) / math.exp(ai * bi)) * ((1 / (1 + math.exp(-ai * (ri - bi))) - (1 / (1 + math.exp(ai * bi))))) )
+	    sig_container.append( ((1 + math.exp(ai * bi)) / math.exp(ai * bi)) * ((1 / (1 + math.exp(-ai * (ri - bi))) - (1 / (1 + math.exp(ai * bi))))) )
     return sig_container
 
-realtime_user1 = norm_sigmoid_util_function(set_rate,30,15)
-# print(realtime_user1)
+realtime_user1 = norm_sigmoid_util_function(set_rate,5,10)
 plt.plot(set_rate,realtime_user1,label='realtime-user1')
 
-realtime_user2 = norm_sigmoid_util_function(set_rate,3,30)
+realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
 plt.plot(set_rate,realtime_user2,label='realtime-user2')
-
 
 plt.xlabel('ri')
 plt.ylabel('Ui(ri)')
