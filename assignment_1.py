@@ -26,11 +26,11 @@ plt.plot(set_rate,delay_tolerant_user1,label='Log k = 15')
 delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
 plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
 
-plt.xlabel('ri')
-plt.ylabel('Ui(ri)')
-plt.title('Assignment 1')
-plt.legend()
-plt.show()
+# plt.xlabel('ri')
+# plt.ylabel('Ui(ri)')
+# plt.title('Assignment 1')
+# plt.legend()
+# plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
@@ -62,7 +62,7 @@ plt.show()
 #---------------------------------------------------------------------------------------------------------------------------#
 
 '''
-  (c) use Levenberg-Marquardt algorithm for curve tting the two functions
+  (c) use Levenberg-Marquardt algorithm for curve fitting the two functions
 in (b) to the normalized logarithmic utility functions, nd the tting param-
 eters k and rmax. Plot the functions in (b) and new generated normalized
 logarithmic utility functions in the same gure.
