@@ -39,7 +39,6 @@ plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
       What is the change to the function with increase inthe value of a?  and increase in the value of b?
 
 '''
-
 #To represent real-time applications runningon mobile stations, use the normalized sigmoid utility function
 def norm_sigmoid_util_function(rate,ai,bi):
     sig_container = []
