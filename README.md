@@ -10,7 +10,7 @@
 
 Install [Python 3.4+](https://www.python.org/) or higher.
 
-Install the dependencies and devDependencies and start the server.
+Setup:
 
 ```sh
 $ git clone https://github.com/ptjlabs/adv_wireless_networks_hw.git
