@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+from scipy.optimize import curve_fit 
 
 '''
  (a) Plot two normalized logarithmic utility functions with k = 15
