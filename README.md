@@ -1,4 +1,3 @@
-# adv_wireless_networks_hw
 
 # Marco Cell Resource Allocation
 
