@@ -23,8 +23,8 @@ delay_tolerant_user1 = norm_log_util_function(set_rate,15)
 plt.plot(set_rate,delay_tolerant_user1,label='Log k = 15')
 
 
-delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
-plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
+#delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
+#plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
 
 # plt.xlabel('ri')
 # plt.ylabel('Ui(ri)')
@@ -49,8 +49,8 @@ def norm_sigmoid_util_function(rate,ai,bi):
 realtime_user1 = norm_sigmoid_util_function(set_rate,5,10)
 plt.plot(set_rate,realtime_user1,label='Sigmoid, a = 5, b = 10')
 
-realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
-plt.plot(set_rate,realtime_user2,label='Sigmoid, a = 0.5, b = 20')
+#realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
+#plt.plot(set_rate,realtime_user2,label='Sigmoid, a = 0.5, b = 20')
 
 plt.xlabel('rates')
 plt.ylabel('Utilization(ri)')
@@ -66,6 +66,12 @@ in (b) to the normalized logarithmic utility functions, nd the tting param-
 eters k and rmax. Plot the functions in (b) and new generated normalized
 logarithmic utility functions in the same gure.
 
-'''
-x_set = set_rate
+link: https://lmfit.github.io/lmfit-py/
 
+'''
+
+
+#delay_tolerant_user1
+#realtime_user1
+popt,pcov = curve_fit(delay_tolerant_user1,set_rate,realtime_user1)
+print(popt)

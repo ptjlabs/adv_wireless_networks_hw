@@ -16,9 +16,9 @@ y_noise = 0.2 * np.random.normal(size=xdata.size)
 ydata = y + y_noise
 plt.plot(xdata, ydata, 'b-', label='data')
 
-popt, pcov = curve_fit(func, xdata, ydata)
-print(popt)
-plt.plot(xdata, func(xdata,*popt), 'r-', label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
+#popt, pcov = curve_fit(func, xdata, ydata)
+#print(popt)
+#plt.plot(xdata, func(xdata,*popt), 'r-', label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
 
 plt.xlabel('x')
 plt.ylabel('y')
