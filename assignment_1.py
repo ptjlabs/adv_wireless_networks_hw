@@ -1,5 +1,3 @@
-#this file will serve as a place to test graphs
-
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -52,20 +50,30 @@ plt.plot(set_rate,realtime_user1,label='Sigmoid, a = 5, b = 10')
 realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,20)
 plt.plot(set_rate,realtime_user2,label='Sigmoid, a = 0.5, b = 20')
 
-plt.xlabel('rates')
-plt.ylabel('Utilization(ri)')
-plt.title('Utilities')
-plt.legend()
-plt.show()
+# plt.xlabel('rates')
+# plt.ylabel('Utilization(ri)')
+# plt.title('Utilities')
+# plt.legend()
+# plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
 '''
-  (c) use Levenberg-Marquardt algorithm for curve fitting the two functions
-in (b) to the normalized logarithmic utility functions, nd the tting param-
+  (c) use Levenberg-Marquardt algorithm for curve fitting the two functions
+in (b) to the normalized logarithmic utility functions, and the fitting param-
 eters k and rmax. Plot the functions in (b) and new generated normalized
-logarithmic utility functions in the same gure.
+logarithmic utility functions in the same figure.
 
 '''
-x_set = set_rate
+fit = curve_fit(norm_log_util_function,set_rate,realtime_user1,absolute_sigma=True)
+ans, cov = fit
+
+k_fitting = ans
+plt.xlabel('rates')
+plt.ylabel('Utilization(ri)')
+plt.title('Curve Fitting Graph')
+plt.plot(set_rate,realtime_user1,label='Sig')
+plt.plot(set_rate,norm_log_util_function(set_rate,k_fitting),label='Curve fit Sig')
+plt.legend()
+plt.show()
 
