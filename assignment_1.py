@@ -8,7 +8,7 @@ from scipy.optimize import curve_fit # https://docs.scipy.org/doc/scipy/referenc
      and r-max = 50, and k = 0.1 and r-max = 50
 '''
 # Define Rate Set (50 being maximum required rate for the user to achieve 100%
-set_rate = np.arange(0.,47.,0.2)
+set_rate = np.arange(0.,51.,0.2)
 
 # to represent delay-tolerant applications running on mobilestations, use the normalized logarithmic utility function
 def norm_log_util_function(rate_of_utilization):
@@ -25,11 +25,6 @@ plt.plot(set_rate,delay_tolerant_user1,label='Log k = 15')
 delay_tolerant_user2 = norm_log_util_function(0.1)
 plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
 
-# plt.xlabel('ri')
-# plt.ylabel('Ui(ri)')
-# plt.title('Assignment 1')
-# plt.legend()
-# plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
@@ -67,16 +62,16 @@ eters k and rmax. Plot the functions in (b) and new generated normalized
 logarithmic utility functions in the same figure.
 
 '''
-# p0 = [1,1]
-# fit = curve_fit(norm_log_util_function,set_rate,p0,realtime_user1,absolute_sigma=True)
-# ans, cov = fit
+
+
+
 
 # k_fitting = ans 
 # plt.xlabel('rates')
 # plt.ylabel('Utilization(ri)')
 # plt.title('Curve Fitting Graph')
-# plt.plot(set_rate, realtime_user1,label='Sig')
-# plt.plot(set_rate,norm_log_util_function(k_fitting),label='Curve fit Sig')
+# plt.plot( realtime_user1,label='Sig')
+# plt.plot(norm_log_util_function(k_fitting),label='Curve fit Sig')
 # plt.legend()
 # plt.show()
 
