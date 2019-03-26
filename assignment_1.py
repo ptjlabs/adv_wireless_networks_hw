@@ -1,7 +1,9 @@
+from __future__ import division
 import matplotlib.pyplot as plt
 import numpy as np
 import math
 from scipy.optimize import curve_fit # https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit
+from sympy import *
 
 
 '''
@@ -20,11 +22,19 @@ def norm_log_util_function(set_rate,rate_of_utilization):
   return container
 
 delay_tolerant_user1 = norm_log_util_function(set_rate,15)
-# plt.plot(set_rate,delay_tolerant_user1,label='Log k = 15')
+plt.plot(set_rate,delay_tolerant_user1,label='Log k = 15')
 
 
 delay_tolerant_user2 = norm_log_util_function(set_rate,0.1)
-# plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
+plt.plot(set_rate,delay_tolerant_user2,label='Log k = 0.1')
+
+plt.xlabel('rates')
+plt.ylabel('Utilization(ri)')
+plt.title('Utilities')
+plt.legend()
+plt.show()
+
+
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
@@ -42,16 +52,16 @@ def norm_sigmoid_util_function(set_rate,ai,bi):
   return sig_container
 
 realtime_user1 = norm_sigmoid_util_function(set_rate,5,10)
-# plt.plot(set_rate,realtime_user1,label='Sigmoid, a = 5, b = 10')
+plt.plot(set_rate,realtime_user1,label='Sigmoid, a = 5, b = 10')
 
 realtime_user2 = norm_sigmoid_util_function(set_rate,0.5,10)
-# plt.plot(set_rate,realtime_user2,label='Sigmoid, a = 0.5, b = 20')
+plt.plot(set_rate,realtime_user2,label='Sigmoid, a = 0.5, b = 20')
 
-# plt.xlabel('rates')
-# plt.ylabel('Utilization(ri)')
-# plt.title('Utilities')
-# plt.legend()
-# plt.show()
+plt.xlabel('rates')
+plt.ylabel('Utilization(ri)')
+plt.title('Utilities')
+plt.legend()
+plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------#
 
@@ -93,3 +103,15 @@ plt.show()
    in (b) with time (iterarions) for a total rate R = 100.
 '''
 
+# new_set_rate = np.arange(0.,100.,0.2)
+# x = symbols('x')
+
+# def equipment_opti(rate,rate_of_utilization):
+#   container = []
+#   for ri in set_rate:
+#       return diff(math.log(norm_log_util_function(rate,rate_of_utilization)) / ri)
+#   return container
+    
+# allocation_rate = equipment_opti(new_set_rate,15)
+# # plt.plot(new_set_rate,realtime_user1,label='Sigmoid, a = 5, b = 10')
+# print(allocation_rate)
